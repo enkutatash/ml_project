@@ -1,4 +1,4 @@
-# Django ML Prediction API
+# Student Habits vs Academic Performance
 
 This project is a Django REST API that serves multiple machine learning models to predict student exam scores based on input features.
 
