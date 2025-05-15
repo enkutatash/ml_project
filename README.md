@@ -4,12 +4,12 @@ This project serves multiple machine learning models to predict student exam sco
 
 ---
 
-## API Endpoint
+## API Endpoint 
 
 ### API Key `https://ml-project-1e2k.onrender.com`
 ### POST `/api/predict/`
 
-Predicts exam scores based on provided features and selected ML model.
+Predicts exam scores based on provided features and selected ML model .
 
 ---
 
