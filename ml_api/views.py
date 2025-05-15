@@ -19,7 +19,7 @@ class PredictView(APIView):
                     'score': float(prediction[0])
                 })
             else:
-                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+                return Response({'error': 'Validation failed', 'details': serializer.errors})
         except Exception as e:
             tb = traceback.format_exc()
             return Response({'error': str(e), 'traceback': tb}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
