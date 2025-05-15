@@ -6,6 +6,7 @@ This project is a Django REST API that serves multiple machine learning models t
 
 ## API Endpoint
 
+### API Key `https://ml-project-1e2k.onrender.com`
 ### POST `/api/predict/`
 
 Predicts exam scores based on provided features and selected ML model.
