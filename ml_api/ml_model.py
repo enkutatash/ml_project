@@ -3,6 +3,8 @@ import joblib
 
 BASE_DIR = os.path.dirname(__file__)
 
+scaler = joblib.load(os.path.join(BASE_DIR, 'scaler.pkl'))
+
 model_files = {
     'linear': 'linear.pkl',
     'ridge': 'ridge.pkl',

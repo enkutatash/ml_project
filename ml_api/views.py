@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .ml_model import models
+from .ml_model import models, scaler  # include scaler here
 from .serializers import PredictionNamedSerializer
 import traceback
 
@@ -12,8 +12,12 @@ class PredictView(APIView):
             if serializer.is_valid():
                 model_name = serializer.validated_data['model']
                 features = serializer.get_feature_array()
+
+                # Scale the features before prediction
+                scaled_features = scaler.transform([features])
+
                 model = models[model_name]
-                prediction = model.predict([features])
+                prediction = model.predict(scaled_features)
                 return Response({
                     'model_used': model_name,
                     'score': float(prediction[0])
